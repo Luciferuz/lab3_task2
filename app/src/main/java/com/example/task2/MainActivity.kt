@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding.bnToSecond.setOnClickListener { toSecondClick() }
         binding.navView.setOnNavigationItemSelectedListener { onAboutClick(it) }
         setContentView(binding.root)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun onAboutClick(menuItem: MenuItem) : Boolean {

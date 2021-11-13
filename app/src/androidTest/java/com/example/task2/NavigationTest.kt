@@ -202,6 +202,13 @@ class NavigationTest {
         onView(withContentDescription(R.string.nav_app_bar_navigate_up_description)).perform(click())
         //onView(withId(R.id.fragment1)).check(matches(isDisplayed()))
         onView(withId(R.id.bnToSecond)).check(matches(isDisplayed()))
+
+        try {
+            onView(withContentDescription(R.string.nav_app_bar_navigate_up_description)).perform(click())
+            assert(false)
+        } catch (NoActivityResumedException: Exception) {
+            assert(true)
+        }
     }
 
     @Test
