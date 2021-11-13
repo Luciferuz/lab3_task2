@@ -18,10 +18,11 @@ class Activity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = Activity2Binding.inflate(layoutInflater)
-        binding.toFirst.setOnClickListener { toFirstClick() }
-        binding.toThird.setOnClickListener { toThirdClick() }
-        binding.bottomNavigation.setOnNavigationItemSelectedListener { onAboutClick(it) }
+        binding.bnToFirst.setOnClickListener { toFirstClick() }
+        binding.bnToThird.setOnClickListener { toThirdClick() }
+        binding.navView.setOnNavigationItemSelectedListener { onAboutClick(it) }
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun toFirstClick(){

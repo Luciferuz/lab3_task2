@@ -6,16 +6,17 @@ import android.os.Bundle
 import android.view.MenuItem
 import com.example.task2.databinding.Activity1Binding
 
-class Activity1 : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: Activity1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = Activity1Binding.inflate(layoutInflater)
-        binding.toSecond.setOnClickListener { toSecondClick() }
-        binding.bottomNavigation.setOnNavigationItemSelectedListener { onAboutClick(it) }
+        binding.bnToSecond.setOnClickListener { toSecondClick() }
+        binding.navView.setOnNavigationItemSelectedListener { onAboutClick(it) }
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun onAboutClick(menuItem: MenuItem) : Boolean {
